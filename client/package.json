@@ -1,0 +1,21 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify script.js -o bundle.js -t vuefy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "vue": "^2.6.12",
+    "vue-jwt-mongo": "^1.6.3",
+    "vue-resource": "^1.5.2",
+    "vue-router": "^3.5.1",
+    "vueify": "^9.4.1"
+  }
+}
