@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify script.js -o bundle.js -t vuefy"
+    "build": "browserify script.js -o bundle.js -t vueify"
   },
   "keywords": [],
   "author": "",
