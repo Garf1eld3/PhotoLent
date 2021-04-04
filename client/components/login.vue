@@ -21,16 +21,39 @@
 
 
 <template>
-	<form>
+	<div>
+	<form id="login_form">
 	<div class="mb-3">
     <label for="login" class="form-label">Логин</label>
     <input type="text" class="form-control" id="login">
   </div>
   <div class="mb-3">
     <label for="password1" class="form-label">Пароль</label>
-    <input type="password" class="form-control" id="password1">
+    <input type="password" class="form-control" id="password">
   </div>
-  <button type="submit" class="btn btn-primary" id="reg">Войти</button>
+  <button type="submit" class="btn btn-primary" id="reg" v-on:click="login">Войти</button>
   <center><a href="https://localhost:8080/#/register" class="form-link">Регистрация</a></center>
 </form>
+</div>
 </template>
+
+
+<script>
+	module.exports={
+		methods:{
+			login: function () {
+				console.log("login");
+				event.preventDefault();
+				let form = document.getElementById("login_form");
+					let promise = this.$auth.logIn(form.login.value, form.password.value);
+					promise.then(function(response){
+						console.log("Login success!");
+						this.$router.push("/feed");
+					}).catch(function(response){
+						console.log("Error!");
+						console.log(response);
+					});
+			}
+		}
+	}
+</script>
