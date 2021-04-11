@@ -9,6 +9,7 @@ let register = require("./components/register.vue");
 let login = require("./components/login.vue");
 let index = require("./components/index.vue");
 let feed = require("./components/feed.vue");
+let upload = require("./components/upload.vue");
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
@@ -21,7 +22,8 @@ let router = new VueRouter({
 	{path:"/register", component: register},
 	{path:"/login", component: login},
 	{path:"/", component: index},
-	{path:"/feed", component: feed}
+	{path:"/feed", component: feed},
+	{path:"/upload", component: upload}
 
 	]
 });
