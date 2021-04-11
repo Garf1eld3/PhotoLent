@@ -350,7 +350,7 @@ module.exports={
 		return {imageUrl: "https://placehold.it/400"}
 	},
 	methods:{
-		previw: function(event){
+		preview: function(event){
 			let select = event.target.files;
 			if(select.length != 1) return;
 			let self = this;

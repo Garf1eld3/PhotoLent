@@ -30,6 +30,15 @@ app.post("/upload", [vjmServer.jwtProtector,upload.single("picture")],
 		insertRecord(req.user.username, req.file.filename);
 		res.sendStatus(200);
 	});
+app.get("/feed", vjmServer.jwtProtector, function (req, res) {
+	console.log("call photos");
+	database.collection("files").find({}).sort({date: -1}).limit(10).toArray(
+		function(err, doc){
+			console.log(doc);
+			let string = JSON.stringify(doc);
+			res.send(string);
+		});
+});
 
 Mclient.connect(url, function(err, client){
 	database = client.db(dbName);
