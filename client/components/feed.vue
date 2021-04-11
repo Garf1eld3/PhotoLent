@@ -1,17 +1,16 @@
 <template>
 	<div>
-		<a v-on:click="logout">Выйти</a>
+		<header-m></header-m>
 	</div>
 </template>
 
 
 <script>
+	let Header = require("./header.vue");
 	module.exports={
-		methods:{
-			logout: function () {
-				this.$auth.logOut();
-				this.$router.push("/");
-			}
+		components:{
+			headerM: Header
 		}
+		
 	}
 </script>
